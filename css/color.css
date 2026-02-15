@@ -51,6 +51,8 @@ body::-webkit-scrollbar-button {
     z-index: 2;
     padding-right: 10vw;
     margin-right: -10vw;
+    margin-left: 0.5vw;
+    margin-top:0.5vw;
 }
 
 .settingsButton {
@@ -346,3 +348,4 @@ body::-webkit-scrollbar-button {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
