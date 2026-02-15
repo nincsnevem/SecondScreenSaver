@@ -17,6 +17,9 @@
 
 html {
     scrollbar-width: none;
+    -webkit-text-size-adjust: 100%;
+    /* Prevents Chrome from scaling text on its own */
+    text-size-adjust: 100%;
 }
 
 
@@ -57,6 +60,8 @@ body::-webkit-scrollbar-button {
     height: 3vw;
     border: none;
     border-radius: 12mm;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     margin-bottom: 2vh;
     position: relative;
     align-items: center;
@@ -90,6 +95,8 @@ body::-webkit-scrollbar-button {
     height: 2vw;
     width: 2vw;
     border-radius: 3.5mm;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     transition: all 0.8s ease;
     cursor: pointer;
     opacity: 0;
@@ -103,7 +110,9 @@ body::-webkit-scrollbar-button {
 #inputdiv {
     padding: 0;
     opacity: 0;
-    border-radius: 3.5mm;
+    border-radius: 2vw;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     width: fit-content;
     height: fit-content;
     background-color: var(--bgcolor);
@@ -128,13 +137,15 @@ body::-webkit-scrollbar-button {
     color: var(--altcolor);
     background-color: var(--bgcolor);
     border: none;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     padding: 0;
     padding-left: 0.5vw;
     padding-right: 0.5vw;
     margin: 0;
     margin-left: 0.5vw;
     height: 2vw;
-    border-radius: 3.5mm;
+    border-radius: 2vw;
     flex: 1;
     text-align: left;
     line-height: 1;
@@ -142,11 +153,11 @@ body::-webkit-scrollbar-button {
     text-shadow: none;
     letter-spacing: 2px;
     font-family: "Nova Mono", monospace;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     opacity: 0;
     transition: min-width 0.5s ease, max-width 0.5s ease, opacity 0.4s ease;
-    font-size: 4mm;
+    font-size: 1vw;
     cursor: pointer;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
@@ -234,7 +245,8 @@ body::-webkit-scrollbar-button {
 }
 
 #analogClockContainer {
-    position: relative;
+    position: absolute;
+    left: 26vw;
     justify-self: center;
     margin-top: 8vh;
     margin-right: 3vw;
@@ -249,6 +261,8 @@ body::-webkit-scrollbar-button {
     width: 40vw;
     border: 0;
     border-radius: 20vw;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     background-color: var(--altcolor);
     position: absolute;
     z-index: 1;
@@ -261,6 +275,8 @@ body::-webkit-scrollbar-button {
     width: 3vw;
     border: 0;
     border-radius: 3vw;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     background-color: var(--bgcolor);
     z-index: 2;
     position: absolute;
@@ -277,6 +293,8 @@ body::-webkit-scrollbar-button {
     width: 2vw;
     border: 0;
     border-radius: 3vw;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     background-color: var(--bgcolor);
     z-index: 3;
     position: absolute;
@@ -293,6 +311,8 @@ body::-webkit-scrollbar-button {
     width: 0.5vw;
     border: 0;
     border-radius: 1vw;
+    background-clip: padding-box;
+    transform: rotate(0.05deg);
     background-color: var(--contrastcolor);
     z-index: 4;
     position: absolute;
