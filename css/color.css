@@ -58,8 +58,8 @@ body::-webkit-scrollbar-button {
 .settingsButton {
     background-color: var(--altcolor);
     color: var(--bgcolor);
-    width: 3vw;
-    height: 3vw;
+    width: max(3vw, 50px);
+    height: max(3vw, 50px);
     border: none;
     border-radius: 12mm;
     background-clip: padding-box;
@@ -86,7 +86,7 @@ body::-webkit-scrollbar-button {
 }
 
 #colorSetting:hover {
-    width: 8vw;
+    width: max(8vw, 106px);
     transition: all 0.8s ease;
 }
 
@@ -94,8 +94,8 @@ body::-webkit-scrollbar-button {
     border: none;
     padding: 0;
     margin: 0;
-    height: 2vw;
-    width: 2vw;
+    height: max(2vw, 40px);
+    width: max(2vw, 40px);
     border-radius: 3.5mm;
     background-clip: padding-box;
     transform: rotate(0.05deg);
@@ -105,7 +105,7 @@ body::-webkit-scrollbar-button {
 }
 
 #colorSetting:hover #colorPicker {
-    width: 7vw;
+    width: max(7vw, 94px);
     transition: all 0.8s ease;
 }
 
@@ -146,7 +146,7 @@ body::-webkit-scrollbar-button {
     padding-right: 0.5vw;
     margin: 0;
     margin-left: 0.5vw;
-    height: 2vw;
+    height: max(2vw, 40px);
     border-radius: 2vw;
     flex: 1;
     text-align: left;
@@ -159,7 +159,7 @@ body::-webkit-scrollbar-button {
     font-style: normal;
     opacity: 0;
     transition: min-width 0.5s ease, max-width 0.5s ease, opacity 0.4s ease;
-    font-size: 1vw;
+    font-size: max(1vw, 4px);
     cursor: pointer;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
@@ -212,8 +212,8 @@ body::-webkit-scrollbar-button {
 }
 
 #colorIcon {
-    width: 2.2vw;
-    height: 2.2vw;
+    width: max(2.2vw, 42px);
+    height: max(2.2vw, 42px);
     flex: 1;
     left: 0.4vw;
     transition: left 0.8s ease, opacity 0.8s ease;
@@ -226,8 +226,8 @@ body::-webkit-scrollbar-button {
 }
 
 #clockIcon {
-    width: 2vw;
-    height: 2vw;
+    width: max(2vw, 36px);
+    height: max(2vw, 36px);
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -348,5 +348,3 @@ body::-webkit-scrollbar-button {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
-
-
