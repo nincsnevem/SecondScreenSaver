@@ -226,8 +226,8 @@ body::-webkit-scrollbar-button {
 }
 
 #clockIcon {
-    width: max(2vw, 36px);
-    height: max(2vw, 36px);
+    width: max(2vw, 40px);
+    height: max(2vw, 40px);
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -348,3 +348,4 @@ body::-webkit-scrollbar-button {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
