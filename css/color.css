@@ -5,10 +5,6 @@
     --bgcolorlight: color-mix(in srgb, var(--bgcolor), white 20%);
     --altcolorlight: color-mix(in srgb, var(--altcolor), white 30%);
     /**/
-    --digital-button-size: 6vw;
-    --off-button-size: 8vw;
-    --analog-button-size: 6vw;
-    /**/
     --hour-x: 0;
     --hour-y: 0;
     --min-x: 0;
@@ -137,8 +133,8 @@ body::-webkit-scrollbar-button {
 }
 
 .clockOption {
-    min-width: 0;
-    max-width: 0;
+    min-width: 0vw;
+    max-width: 0vw;
     color: var(--altcolor);
     background-color: var(--bgcolor);
     border: none;
@@ -170,21 +166,15 @@ body::-webkit-scrollbar-button {
 #clockSettings:hover .clockOption {
     opacity: 1;
     transition: min-width 0.8s ease, max-width 0.8s ease, opacity 0.8s ease;
+    min-width: 6vw;
+    max-width: 6vw;
 }
 
-#clockSettings:hover #option-off {
-    min-width: var(--off-button-size);
-    max-width: var(--off-button-size);
-}
-
-#clockSettings:hover #option-digital {
-    min-width: var(--digital-button-size);
-    max-width: var(--digital-button-size);
-}
-
-#clockSettings:hover #option-analog {
-    min-width: var(--analog-button-size);
-    max-width: var(--analog-button-size);
+#clockSettings:hover .clockOption.active {
+    opacity: 1;
+    transition: min-width 0.8s ease, max-width 0.8s ease, opacity 0.8s ease;
+    min-width: 10vw;
+    max-width: 10vw;
 }
 
 #clockSettings:hover #clockIcon {

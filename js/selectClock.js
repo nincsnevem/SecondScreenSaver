@@ -25,24 +25,20 @@ function setClock(status) {
     analogClock.style.setProperty("opacity", "0")
     analogClock.style.setProperty("visibility", "visible")
     if (status == "off") {
-        document.documentElement.style.setProperty("--off-button-size", "10vw")
-        document.documentElement.style.setProperty("--digital-button-size", "6vw")
-        document.documentElement.style.setProperty("--analog-button-size", "6vw")
-
+        document.querySelector(".clockOption.active").classList.remove("active");
+        offButton.classList.add("active");
 
 
     }
     if (status == "digital") {
-        document.documentElement.style.setProperty("--off-button-size", "6vw")
-        document.documentElement.style.setProperty("--digital-button-size", "10vw")
-        document.documentElement.style.setProperty("--analog-button-size", "6vw")
+        document.querySelector(".clockOption.active").classList.remove("active");
+        digitalButton.classList.add("active");
         digitalClock.style.setProperty("opacity", "1")
 
     }
     if (status == "analog") {
-        document.documentElement.style.setProperty("--off-button-size", "6vw")
-        document.documentElement.style.setProperty("--digital-button-size", "6vw")
-        document.documentElement.style.setProperty("--analog-button-size", "10vw")
+        document.querySelector(".clockOption.active").classList.remove("active");
+        analogButton.classList.add("active");
         analogClock.style.setProperty("opacity", "1")
     }
     localStorage.setItem("clockStatus", status);
