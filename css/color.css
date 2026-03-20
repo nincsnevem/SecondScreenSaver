@@ -402,7 +402,7 @@ body::-webkit-scrollbar-button {
 
 #simpleAnimationSettings:hover {
     transition: all 0.5s;
-    width: max(22vw, 330px);
+    width: max(24vw, 360px);
     padding-right: 0.5vw;
 }
 
@@ -448,6 +448,19 @@ body::-webkit-scrollbar-button {
     animation: bubbleAnimation calc(100 / var(--bubbleDelay) * 1.5s * (var(--bubbleRow)*0.6 + 1)) linear infinite;
     filter: drop-shadow(0 00.2vmin var(--altcolorlight)) blur(calc(0.1vmin * var(--bubbleRow)));
     opacity: 0.4;
+}
+
+
+#shaderContainer{
+    
+}
+#glslCanvas{
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 @keyframes bubbleAnimation {

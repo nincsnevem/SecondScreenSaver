@@ -1,18 +1,26 @@
 const colorPicker = document.getElementById("colorPicker");
 colorPicker.addEventListener("input", setBackground);
 
+let globalAltColor = [];
+let globalBgColor = [];
+
+
 
 
 function setBackground() {
 
     if (isLight(this.value)) {
         document.documentElement.style.setProperty("--altcolor", "rgb(42, 42, 42)")
-        localStorage.setItem("altColor", "rgb(42, 42, 42)");
+        localStorage.setItem("altColor", "#2a2a2a");
+        globalAltColor = [0.1640, 0.1640, 0.1640];
     } else {
         document.documentElement.style.setProperty("--altcolor", "#f0f8ff");
         localStorage.setItem("altColor", "#f0f8ff");
+        globalAltColor = [0.9411, 0.9725, 1.0];
     }
     document.documentElement.style.setProperty("--bgcolor", this.value);
+    globalBgColor = toRgb(this.value);
+    console.log(globalBgColor);
     document.documentElement.style.setProperty("--contrastcolor", contrastColor(this.value));
 
 
@@ -139,4 +147,14 @@ function IsDark(hex) {
     }
     return false;
 
+}
+
+function toRgb(hex){
+    hex = hex.replace("#", "");
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+
+
+    return [r/255, g/255, b/255];
 }
