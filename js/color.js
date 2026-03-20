@@ -93,7 +93,7 @@ function IsColored(hex) {
 
 
     distance = Math.max(Math.abs(r - g), Math.abs(r - b), Math.abs(g - b));
-    if (distance < 20 || Math.max(r, g, b) < 50) {
+    if (distance < 20 || Math.max(r, g, b) < 30) {
         return false
     }
     return true

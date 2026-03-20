@@ -60,13 +60,13 @@ function setShadow(ms, seconds, minutes, hours) {
 
 
 function updateClock() {
-    let now = new Date();
+    const now = new Date();
 
 
     if (analogClock.style.getPropertyValue("visibility") === "visible") {
+
         setHands(now.getMilliseconds(), now.getSeconds(), now.getMinutes(), now.getHours());
         setShadow(now.getMilliseconds(), now.getSeconds(), now.getMinutes(), now.getHours());
     }
     requestAnimationFrame(updateClock);
 }
-requestAnimationFrame(updateClock);
