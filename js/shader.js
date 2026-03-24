@@ -3,8 +3,8 @@ import GlslCanvas from 'https://cdn.skypack.dev/pin/glslCanvas@v0.2.6-vKgxQPoe1R
 const canvas = document.getElementById("glslCanvas");
 const sandbox = new GlslCanvas(canvas);
 
-canvas.width = window.innerWidth / 4;
-canvas.height = window.innerHeight / 4;
+canvas.width = window.innerWidth / 2;
+canvas.height = window.innerHeight / 2;
 // 1. The #version MUST be the first characters in the string
 const myShader = `
 precision highp float;    
@@ -104,9 +104,11 @@ sandbox.load(myShader);
 function updateShader() {
 
 
-    if (document.getElementById("shaderContainer").style.getPropertyValue("display") == "none"){
-        return
+    if (document.getElementById("shaderContainer").style.getPropertyValue("display") === "none"){
+        sandbox.pause();
     }
+    canvas.width = window.innerWidth / 2;
+    canvas.height = window.innerHeight / 2;
     sandbox.setUniform("whiteReplacement", globalBgColor[0], globalBgColor[1], globalBgColor[2]);
     sandbox.setUniform("blackReplacement", globalAltColor[0],globalAltColor[1],globalAltColor[2]);
 
