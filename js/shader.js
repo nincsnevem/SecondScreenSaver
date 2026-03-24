@@ -3,8 +3,8 @@ import GlslCanvas from 'https://cdn.skypack.dev/pin/glslCanvas@v0.2.6-vKgxQPoe1R
 const canvas = document.getElementById("glslCanvas");
 const sandbox = new GlslCanvas(canvas);
 
-canvas.width = window.innerWidth / 2;
-canvas.height = window.innerHeight / 2;
+canvas.width = window.innerWidth / 4;
+canvas.height = window.innerHeight / 4;
 // 1. The #version MUST be the first characters in the string
 const myShader = `
 precision highp float;    

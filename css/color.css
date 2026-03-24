@@ -46,7 +46,7 @@ body::-webkit-scrollbar-button {
     height: 90vh;
     opacity: 0;
     transition: opacity 0.8s ease-in;
-    z-index: 2;
+    z-index: 4;
     padding-right: 10vw;
     margin-right: -10vw;
     margin-left: 0.5vw;
@@ -402,7 +402,7 @@ body::-webkit-scrollbar-button {
 
 #simpleAnimationSettings:hover {
     transition: all 0.5s;
-    width: max(24vw, 360px);
+    width: max(30vw, 450px);
     padding-right: 0.5vw;
 }
 
@@ -453,14 +453,27 @@ body::-webkit-scrollbar-button {
 
 #shaderContainer{
     visibility: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 #glslCanvas{
-    visibility: visible;
+    visibility: inherit;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+}
+
+#blurDiv{
+    visibility: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    backdrop-filter: blur(10px);
 }
 
 @keyframes bubbleAnimation {

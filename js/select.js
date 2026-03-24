@@ -25,12 +25,16 @@ simpleCircleButton.addEventListener("click", () => setVisible("circle"));
 const simpleBubbleButton = document.getElementById("simple-anim-bubble");
 simpleBubbleButton.addEventListener("click", () => setVisible("bubble"));
 
+const lavaButton = document.getElementById("lava-anim");
+lavaButton.addEventListener("click", () => setVisible("lava"));
+
 const digitalClock = document.getElementById("digitalClockContainer");
 const analogClock = document.getElementById("analogClockContainer");
 const dvdLogo = document.getElementById("dvdLogo");
 const snakeContainer = document.getElementById("snakeContainer");
 const circleGradient = document.getElementById("gradientContainer");
-const bubbleContainer = document.getElementById("bubbleContainer")
+const bubbleContainer = document.getElementById("bubbleContainer");
+const lavaContainer = document.getElementById("shaderContainer");
 
 
 
@@ -131,6 +135,15 @@ function setVisible(status) {
         simpleBubbleButton.classList.add("active");
         bubbleContainer.style.setProperty("visibility", "visible");
         bubbleContainer.style.setProperty("opacity", "1");
+    }
+
+    if(status === "lava"){
+       document.querySelectorAll(".simple-anim-option.active").forEach(el => {
+            el.classList.remove("active");
+        });
+        lavaButton.classList.add("active");
+        shaderContainer.style.setProperty("visibility", "visible");
+        shaderContain.style.setProperty("opacity", "1"); 
     }
     localStorage.setItem("Status", status);
 }
