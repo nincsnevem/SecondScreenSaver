@@ -40,6 +40,7 @@ const lavaContainer = document.getElementById("shaderContainer");
 
 
 
+
 const savedStatus = localStorage.getItem("Status");
 setVisible(savedStatus)
 console.log("Clock loaded");
@@ -63,6 +64,9 @@ function setVisible(status) {
 
     bubbleContainer.style.setProperty("visibility", "hidden");
     bubbleContainer.style.setProperty("opacity", "0");
+
+    shaderContainer.style.setProperty("visibility", "hidden");
+        shaderContainer.style.setProperty("opacity", "0");
 
     document.querySelectorAll(".active").forEach(el => {
         el.classList.remove("active");
@@ -89,7 +93,7 @@ function setVisible(status) {
             el.classList.remove("active");
         });
         analogButton.classList.add("active");
-        analogClock.style.setProperty("visibility", "visible");
+        analogClock.style.setProperty("display", "none");
         analogClock.style.setProperty("opacity", "1");
 
         requestAnimationFrame(updateClock);
@@ -142,8 +146,8 @@ function setVisible(status) {
             el.classList.remove("active");
         });
         lavaButton.classList.add("active");
-        shaderContainer.style.setProperty("visibility", "visible");
-        shaderContain.style.setProperty("opacity", "1"); 
+        shaderContainer.style.setProperty("display", "block");
+        shaderContainer.style.setProperty("opacity", "1"); 
     }
     localStorage.setItem("Status", status);
 }

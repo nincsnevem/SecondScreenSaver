@@ -104,7 +104,9 @@ sandbox.load(myShader);
 function updateShader() {
 
 
-    
+    if (document.getElementById("shaderContainer").style.getPropertyValue("display") == "none"){
+        return
+    }
     sandbox.setUniform("whiteReplacement", globalBgColor[0], globalBgColor[1], globalBgColor[2]);
     sandbox.setUniform("blackReplacement", globalAltColor[0],globalAltColor[1],globalAltColor[2]);
 
