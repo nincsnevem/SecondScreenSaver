@@ -1,7 +1,9 @@
 import GlslCanvas from 'https://cdn.skypack.dev/pin/glslCanvas@v0.2.6-vKgxQPoe1RYCF7bo1o1i/mode=imports/optimized/glslCanvas.js';
 
+
+
 const canvas = document.getElementById("glslCanvas");
-const sandbox = new GlslCanvas(canvas);
+let sandbox = new GlslCanvas(canvas);
 
 canvas.width = window.innerWidth / 2;
 canvas.height = window.innerHeight / 2;
@@ -10,16 +12,18 @@ const myShader = `
 precision highp float;    
 
 uniform vec2 u_resolution;
-uniform float u_time;
+uniform float myTime;
 uniform vec4 u_mouse;
+
 
 uniform vec3 whiteReplacement; 
 uniform vec3 blackReplacement; 
 
 
-#define iTime u_time
+
 #define iResolution u_resolution
 #define iMouse u_mouse
+#define iTime myTime
 
 
 
@@ -105,18 +109,45 @@ function updateShader() {
 
 
     if (document.getElementById("shaderContainer").style.getPropertyValue("display") === "none"){
-        sandbox.pause();
+        if(sandbox){
+        sandbox.destroy();
+        sandbox = null;
+        }
+        
     }
-    canvas.width = window.innerWidth / 2;
-    canvas.height = window.innerHeight / 2;
-    sandbox.setUniform("whiteReplacement", globalBgColor[0], globalBgColor[1], globalBgColor[2]);
-    sandbox.setUniform("blackReplacement", globalAltColor[0],globalAltColor[1],globalAltColor[2]);
+    if(document.getElementById("shaderContainer").style.getPropertyValue("display") === "block" ){
+        if (sandbox === null){
+        sandbox = new GlslCanvas(canvas);
+        sandbox.load(myShader);
+    }
+
+
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight / 2;
+        sandbox.setUniform("whiteReplacement", globalBgColor[0], globalBgColor[1], globalBgColor[2]);
+        sandbox.setUniform("blackReplacement", globalAltColor[0],globalAltColor[1],globalAltColor[2]);
+        sandbox.setUniform("myTime", getDayFloat());
+
+    }
+    
 
     
     requestAnimationFrame(updateShader);
 }
 
+function getDayFloat() {
+    const now = new Date();
+    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    
+    // Difference in ms (a number)
+    const msElapsed = now - midnight; 
+    const speed = 0.0007;
 
-updateShader();
+    // Convert to a float between 0.0 and 1.0
+    return msElapsed * speed; 
+}
+
+
+requestAnimationFrame(updateShader);
 
 

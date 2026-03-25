@@ -65,7 +65,7 @@ function setVisible(status) {
     bubbleContainer.style.setProperty("visibility", "hidden");
     bubbleContainer.style.setProperty("opacity", "0");
 
-    shaderContainer.style.setProperty("visibility", "hidden");
+    shaderContainer.style.setProperty("display", "none");
         shaderContainer.style.setProperty("opacity", "0");
 
     document.querySelectorAll(".active").forEach(el => {
@@ -93,7 +93,7 @@ function setVisible(status) {
             el.classList.remove("active");
         });
         analogButton.classList.add("active");
-        analogClock.style.setProperty("display", "none");
+        analogClock.style.setProperty("visibility", "visible");
         analogClock.style.setProperty("opacity", "1");
 
         requestAnimationFrame(updateClock);
