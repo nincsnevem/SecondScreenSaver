@@ -42,6 +42,8 @@ body::-webkit-scrollbar-button {
 }
 
 #settings {
+    display: flex;
+    flex-direction: column;
     width: 3vw;
     height: 90vh;
     opacity: 0;
@@ -50,6 +52,7 @@ body::-webkit-scrollbar-button {
     padding-right: 10vw;
     margin-right: -10vw;
     margin-left: 0.5vw;
+    gap: max(0.5vw, 10px);
 }
 
 .settingsButton {
@@ -61,20 +64,26 @@ body::-webkit-scrollbar-button {
     border-radius: max(30vw, 50px);
     background-clip: padding-box;
     transform: rotate(0.05deg);
-    margin-bottom: max(0.5vw, 10px);
     position: relative;
     align-items: center;
     display: flex;
     flex: row;
-    flex-grow: 1;
+    flex-grow: 0;
     overflow: hidden;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
     transition: all 0.8s ease;
+  
+}
+.settingsButton:hover{
+    padding-left: max(0.25vw, 5px);
+    padding-right: max(0.25vw, 5px);
+    gap: max(0.4vw, 8px);
 }
 
 #settings:hover {
     opacity: 100%;
     transition: opacity 0.8s ease-out;
+    
 }
 
 #page {
@@ -89,6 +98,7 @@ body::-webkit-scrollbar-button {
 #colorSetting:hover {
     width: max(8vw, 102px);
     transition: all 0.8s ease;
+    padding: 0;
 }
 
 #colorPicker {
@@ -139,10 +149,7 @@ body::-webkit-scrollbar-button {
     border: none;
     background-clip: padding-box;
     margin: 0;
-    padding: 0;
-    margin-left: 0.5vw;
-    padding-left: max(0.5vw, 10px);
-    padding-right: max(0.5vw, 10px);
+    padding: max(0.5vw, 10px);
     height: max(2vw, 40px);
     border-radius: max(2vw, 40px);
     flex-grow: 0;
@@ -161,6 +168,7 @@ body::-webkit-scrollbar-button {
     transform: rotate(0.05deg);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
     transition: flex-grow 0.8s ease, opacity 0.5s ease;
+    margin: 0;
 }
 
 .settingsButton:hover button {
@@ -181,9 +189,6 @@ body::-webkit-scrollbar-button {
     transition: opacity 1s ease left 0.5s ease;
 }
 
-#option-analog {
-    margin-right: 0.5vw;
-}
 
 #colorSetting:hover #inputdiv {
     transition: opacity 0.8s ease;
